@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Hope at UCLA — Free Health Education & Outreach</title>
+<meta name="description" content="Health Hope at UCLA is a student-led organization providing free health workshops, community outreach, and preventive health screenings to underserved communities in Los Angeles.">
+<meta property="og:title" content="Health Hope at UCLA">
+<meta property="og:description" content="Reducing health disparities through free public health education and community outreach in Los Angeles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--white:#fff;--off-white:#f9fafb;--warm-gray:#f1f5f9;--border:#e2e8f0;--blue:#2563eb;--blue-hover:#1d4ed8;--blue-light:#3b82f6;--blue-soft:#dbeafe;--blue-muted:#eff6ff;--sky:#0ea5e9;--text:#0f172a;--text2:#475569;--text3:#94a3b8}
+html{scroll-behavior:smooth}
+body{font-family:'Be Vietnam Pro',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.1rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:all .4s cubic-bezier(.16,1,.3,1)}
+.navbar.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:.8rem 3rem}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--text)}
+.nav-logo-icon{width:34px;height:34px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.85rem;transition:transform .3s}
+.nav-logo:hover .nav-logo-icon{transform:rotate(-5deg) scale(1.05)}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;letter-spacing:-.02em}
+.nav-links{display:flex;align-items:center;gap:.15rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text2);font-size:.84rem;font-weight:500;padding:.45rem .9rem;border-radius:8px;transition:all .2s}
+.nav-links a:hover{color:var(--text);background:var(--warm-gray)}
+.nav-cta{background:var(--blue)!important;color:#fff!important;font-weight:600!important;padding:.45rem 1.2rem!important}
+.nav-cta:hover{background:var(--blue-hover)!important}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px}
+.mobile-toggle span{width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:all .3s}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;background:var(--white);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,#cbd5e1 .7px,transparent .7px);background-size:28px 28px;opacity:.45}
+.hero-glow{position:absolute;width:650px;height:650px;background:radial-gradient(circle,rgba(37,99,235,.06) 0%,transparent 70%);border-radius:50%;top:5%;right:-12%;animation:drift 25s ease-in-out infinite}
+.hero-glow-2{position:absolute;width:450px;height:450px;background:radial-gradient(circle,rgba(14,165,233,.05) 0%,transparent 70%);border-radius:50%;bottom:5%;left:-8%;animation:drift 20s ease-in-out infinite reverse}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-30px)}}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:780px;padding:2rem}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--blue-muted);border:1px solid rgba(37,99,235,.12);padding:.4rem 1.1rem;border-radius:100px;font-size:.75rem;color:var(--blue);font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2rem;animation:fadeUp .7s ease-out both}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulse-dot 2s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6.5vw,5.2rem);color:var(--text);line-height:1.05;letter-spacing:-.035em;margin-bottom:1.5rem;animation:fadeUp .7s .1s ease-out both}
+.hero h1 em{font-style:italic;color:var(--blue)}
+.hero-sub{font-size:clamp(1rem,2vw,1.15rem);color:var(--text2);line-height:1.7;max-width:540px;margin:0 auto 2.5rem;font-weight:300;animation:fadeUp .7s .2s ease-out both}
+.hero-buttons{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .3s ease-out both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.8rem;border-radius:10px;font-size:.9rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:all .3s cubic-bezier(.16,1,.3,1);font-family:'Be Vietnam Pro',sans-serif}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 2px 12px rgba(37,99,235,.2)}
+.btn-primary:hover{background:var(--blue-hover);transform:translateY(-2px);box-shadow:0 6px 24px rgba(37,99,235,.25)}
+.btn-outline{background:var(--white);color:var(--text);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:#94a3b8;background:var(--off-white);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:3.5rem;justify-content:center;margin-top:4.5rem;animation:fadeUp .7s .45s ease-out both}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--text);letter-spacing:-.02em;font-weight:700}
+.hero-stat-label{font-size:.72rem;color:var(--text3);font-weight:500;text-transform:uppercase;letter-spacing:.08em;margin-top:.15rem}
+section{padding:6rem 2rem}
+.section-divider{max-width:1100px;margin:0 auto;border:none;border-top:1px solid var(--border)}
+.section-label{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:.8rem}
+.section-label::before{content:'';width:20px;height:1.5px;background:var(--blue)}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.8rem);letter-spacing:-.03em;line-height:1.15;color:var(--text);margin-bottom:.8rem}
+.section-desc{font-size:1rem;color:var(--text2);line-height:1.7;max-width:550px;font-weight:300}
+.mission{background:var(--white)}
+.mission-grid{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.mission-card{background:var(--off-white);border-radius:20px;padding:2.5rem;border:1px solid var(--border);position:relative}
+.mission-card::before{content:'';position:absolute;top:0;left:2rem;right:2rem;height:3px;background:linear-gradient(90deg,var(--blue),var(--sky));border-radius:0 0 3px 3px}
+.mission-icon-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.5rem}
+.mission-icon-item{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.1rem;text-align:center;transition:all .3s}
+.mission-icon-item:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.04);border-color:rgba(37,99,235,.2)}
+.mission-icon-item .icon{font-size:1.4rem;margin-bottom:.35rem}
+.mission-icon-item span{font-size:.72rem;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.05em}
+.mission-pillars{display:flex;flex-direction:column;gap:.6rem;margin-top:1.8rem}
+.pillar{display:flex;align-items:flex-start;gap:1rem;padding:1rem;border-radius:12px;transition:background .25s}
+.pillar:hover{background:var(--off-white)}
+.pillar-num{min-width:34px;height:34px;background:var(--blue-soft);color:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700}
+.pillar h4{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.15rem}
+.pillar p{font-size:.84rem;color:var(--text2);line-height:1.55;font-weight:300}
+.programs{background:var(--off-white)}
+.programs-inner{max-width:1060px;margin:0 auto}
+.programs-header{text-align:center;margin-bottom:3.5rem}
+.programs-header .section-desc{margin:0 auto}
+.programs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.program-card{background:var(--white);border-radius:16px;padding:1.8rem;border:1px solid var(--border);transition:all .35s cubic-bezier(.16,1,.3,1)}
+.program-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.06);border-color:rgba(37,99,235,.15)}
+.program-emoji{width:46px;height:46px;background:var(--blue-muted);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.2rem}
+.program-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--text);margin-bottom:.5rem}
+.program-card p{font-size:.84rem;color:var(--text2);line-height:1.6;font-weight:300}
+.impact{background:var(--white)}
+.impact-inner{max-width:1060px;margin:0 auto}
+.impact-header{text-align:center;margin-bottom:3.5rem}
+.impact-header .section-desc{margin:0 auto}
+.impact-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-bottom:3rem}
+.impact-stat{background:var(--off-white);border:1px solid var(--border);border-radius:16px;padding:2rem 1.2rem;text-align:center;transition:all .3s}
+.impact-stat:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.04)}
+.impact-stat .num{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--blue);font-weight:700;line-height:1}
+.impact-stat .label{font-size:.78rem;color:var(--text3);margin-top:.5rem;font-weight:400;line-height:1.35}
+.impact-quote{background:var(--blue-muted);border:1px solid rgba(37,99,235,.1);border-radius:18px;padding:2.5rem;text-align:center;max-width:680px;margin:0 auto}
+.impact-quote p{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--text);line-height:1.65;font-style:italic}
+.impact-quote cite{display:block;margin-top:1rem;font-style:normal;font-size:.82rem;color:var(--text3);font-weight:500}
+.team{background:var(--off-white)}
+.team-inner{max-width:1060px;margin:0 auto}
+.team-header{text-align:center;margin-bottom:3.5rem}
+.team-header .section-desc{margin:0 auto}
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;max-width:640px;margin:0 auto}
+.team-card{background:var(--white);border-radius:16px;padding:2rem;text-align:center;border:1px solid var(--border);transition:all .35s cubic-bezier(.16,1,.3,1)}
+.team-card:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(0,0,0,.06)}
+.team-avatar{width:72px;height:72px;background:linear-gradient(135deg,var(--blue),var(--sky));border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;font-family:'Playfair Display',serif;font-weight:700;margin:0 auto 1.1rem}
+.team-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--text);margin-bottom:.2rem}
+.team-role{font-size:.75rem;color:var(--blue);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+.team-card p{font-size:.84rem;color:var(--text2);line-height:1.55;font-weight:300}
+.join{background:var(--white)}
+.join-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.join-form-wrapper{background:var(--off-white);border-radius:20px;padding:2.2rem;border:1px solid var(--border)}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.76rem;font-weight:600;color:var(--text);margin-bottom:.35rem;letter-spacing:.02em}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:9px;font-family:'Be Vietnam Pro',sans-serif;font-size:.88rem;background:var(--white);transition:all .2s;outline:none;color:var(--text)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.08)}
+.form-group textarea{min-height:75px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.btn-submit{width:100%;padding:.8rem;background:var(--blue);color:#fff;border:none;border-radius:10px;font-family:'Be Vietnam Pro',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .3s;margin-top:.3rem}
+.btn-submit:hover{background:var(--blue-hover);transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,.2)}
+.join-perks{margin-top:2rem;display:flex;flex-direction:column;gap:.7rem}
+.perk{display:flex;align-items:center;gap:.8rem;font-size:.88rem;color:var(--text);font-weight:400}
+.perk-icon{width:34px;height:34px;background:var(--blue-muted);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.join-social{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.join-social h4{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:.5rem}
+.ig-link{display:inline-flex;align-items:center;gap:.5rem;color:var(--blue);font-weight:600;text-decoration:none;font-size:.9rem;transition:opacity .2s}
+.ig-link:hover{opacity:.7}
+.ig-icon{width:16px;height:16px;fill:currentColor}
+.donate-banner{background:var(--off-white);padding:5rem 2rem;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.donate-inner{max-width:600px;margin:0 auto;position:relative;z-index:2}
+.donate-heart{width:56px;height:56px;background:var(--blue-soft);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 1.5rem;color:var(--blue)}
+.donate-banner h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.3rem);color:var(--text);margin-bottom:.8rem;letter-spacing:-.02em}
+.donate-banner p{font-size:.95rem;color:var(--text2);line-height:1.65;margin-bottom:2rem;font-weight:300}
+.btn-donate{display:inline-flex;align-items:center;gap:.5rem;background:var(--blue);color:#fff;padding:.85rem 2.2rem;border-radius:10px;font-size:.95rem;font-weight:700;text-decoration:none;transition:all .3s;box-shadow:0 4px 16px rgba(37,99,235,.2);font-family:'Be Vietnam Pro',sans-serif}
+.btn-donate:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,99,235,.25);background:var(--blue-hover)}
+.footer{background:var(--text);padding:3.5rem 2rem 2rem}
+.footer-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
+.footer-brand .nav-logo{margin-bottom:.8rem}
+.footer-brand .nav-logo-text{color:#fff}
+.footer-brand p{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.55;font-weight:300;max-width:260px}
+.footer-social{display:flex;gap:.5rem;margin-top:1rem}
+.footer-social a{width:34px;height:34px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:9px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);text-decoration:none;font-size:.8rem;transition:all .25s}
+.footer-social a:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.footer-social .ig-icon{fill:currentColor}
+.footer-col h4{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.45);margin-bottom:.9rem}
+.footer-col a{display:block;font-size:.84rem;color:rgba(255,255,255,.35);text-decoration:none;padding:.25rem 0;transition:color .2s;font-weight:300}
+.footer-col a:hover{color:#fff}
+.footer-bottom{max-width:1060px;margin:2.5rem auto 0;padding-top:1.3rem;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:.74rem;color:rgba(255,255,255,.25);font-weight:300}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease-out,transform .6s ease-out}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.mission-grid,.join-inner,.footer-inner{grid-template-columns:1fr;gap:2.5rem}.programs-grid{grid-template-columns:1fr 1fr}.impact-stats{grid-template-columns:repeat(2,1fr)}.navbar{padding:1rem 1.5rem}.navbar.scrolled{padding:.7rem 1.5rem}}
+@media(max-width:700px){.nav-links{display:none}.mobile-toggle{display:flex}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;padding:.8rem;box-shadow:0 10px 40px rgba(0,0,0,.08);border-radius:0 0 14px 14px;border:1px solid var(--border);border-top:none}.nav-links.open a{color:var(--text2);padding:.7rem 1rem}section{padding:4rem 1.5rem}.programs-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr;max-width:320px}.form-row{grid-template-columns:1fr}.hero-stats{flex-direction:column;gap:1rem}.footer-inner{grid-template-columns:1fr 1fr;gap:1.5rem}}
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <a href="#" class="nav-logo"><div class="nav-logo-icon">H</div><span class="nav-logo-text">Health Hope</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#join">Join Us</a></li>
+    <li><a href="https://www.gofundme.com/f/support-health-hopes-mobile-screenings-at-ucla?attribution_id=sl:dddb9904-40f3-4ede-be4d-869117d9e656&lang=en_US&ts=1770542287&utm_campaign=man_sharesheet_dash&utm_content=amp17_tc&utm_medium=customer&utm_source=copy_link" target="_blank" class="nav-cta">Donate ♥</a></li>
+  </ul>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<section class="hero" id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">UCLA Student Organization</div>
+    <h1>Health <em>Hope</em><br>at UCLA</h1>
+    <p class="hero-sub">A student-led organization providing free health workshops and outreach to underserved communities across Los Angeles.</p>
+    <div class="hero-buttons">
+      <a href="#join" class="btn btn-primary">Get Involved →</a>
+      <a href="#programs" class="btn btn-outline">Our Programs</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">500+</div><div class="hero-stat-label">Lives Reached</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-label">Workshops Held</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">50+</div><div class="hero-stat-label">Active Members</div></div>
+    </div>
+  </div>
+</section>
+<section class="mission" id="mission">
+  <div class="mission-grid">
+    <div class="reveal">
+      <div class="mission-card">
+        <div class="section-label">What Drives Us</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--text);margin-bottom:.4rem">Bridging the Health Gap</h3>
+        <p style="font-size:.88rem;color:var(--text2);line-height:1.6;font-weight:300">Millions in Los Angeles lack access to basic health education and preventive care. We're changing that — one workshop, one screening, one community at a time.</p>
+        <div class="mission-icon-grid">
+          <div class="mission-icon-item"><div class="icon">🩺</div><span>Screenings</span></div>
+          <div class="mission-icon-item"><div class="icon">📚</div><span>Education</span></div>
+          <div class="mission-icon-item"><div class="icon">🤝</div><span>Outreach</span></div>
+          <div class="mission-icon-item"><div class="icon">❤️</div><span>Advocacy</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="section-label">Our Mission</div>
+      <h2 class="section-title">Reducing health disparities through action</h2>
+      <p class="section-desc" style="margin-bottom:1.8rem">We provide free public health education, community outreach, and preventive health screenings to underserved populations throughout Los Angeles County.</p>
+      <div class="mission-pillars">
+        <div class="pillar"><div class="pillar-num">01</div><div><h4>Health Education</h4><p>Interactive workshops on chronic disease prevention, nutrition, mental health, and health literacy for all ages.</p></div></div>
+        <div class="pillar"><div class="pillar-num">02</div><div><h4>Community Outreach</h4><p>Partnering with local shelters, schools, and community centers to bring resources directly to those who need them most.</p></div></div>
+        <div class="pillar"><div class="pillar-num">03</div><div><h4>Preventive Screenings</h4><p>Free blood pressure, glucose, BMI, and vision screenings to identify health risks early and connect people with care.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="section-divider">
+<section class="programs" id="programs">
+  <div class="programs-inner">
+    <div class="programs-header reveal">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Our Programs & Initiatives</h2>
+      <p class="section-desc">From mobile health screenings to campus workshops, we're building a healthier Los Angeles.</p>
+    </div>
+    <div class="programs-grid">
+      <div class="program-card reveal"><div class="program-emoji">🏥</div><h3>Mobile Health Screenings</h3><p>Free preventive health screenings in underserved neighborhoods — blood pressure, glucose, BMI, and vision assessments at no cost.</p></div>
+      <div class="program-card reveal"><div class="program-emoji">🎓</div><h3>Health Literacy Workshops</h3><p>Interactive sessions on chronic disease prevention, nutrition, mental health awareness, and navigating the healthcare system.</p></div>
+      <div class="program-card reveal"><div class="program-emoji">🌍</div><h3>Community Partnerships</h3><p>Collaborating with LA shelters, schools, faith-based organizations, and community centers to embed health resources locally.</p></div>
+      <div class="program-card reveal"><div class="program-emoji">🧠</div><h3>Mental Health Initiatives</h3><p>Destigmatizing mental health through open forums, stress management workshops, and connecting individuals with support services.</p></div>
+      <div class="program-card reveal"><div class="program-emoji">📋</div><h3>Research & Advocacy</h3><p>Community health needs assessments and advocating for equitable healthcare policies addressing root causes of health disparities.</p></div>
+      <div class="program-card reveal"><div class="program-emoji">🤲</div><h3>Volunteer Training</h3><p>Equipping UCLA students with clinical communication, cultural competency, and public health knowledge for meaningful impact.</p></div>
+    </div>
+  </div>
+</section>
+<section class="impact" id="impact">
+  <div class="impact-inner">
+    <div class="impact-header reveal">
+      <div class="section-label">Our Impact</div>
+      <h2 class="section-title">Making a Measurable Difference</h2>
+      <p class="section-desc">Every screening, every workshop, and every conversation moves us closer to health equity.</p>
+    </div>
+    <div class="impact-stats reveal">
+      <div class="impact-stat"><div class="num">500+</div><div class="label">Community Members Served</div></div>
+      <div class="impact-stat"><div class="num">20+</div><div class="label">Workshops & Events</div></div>
+      <div class="impact-stat"><div class="num">10+</div><div class="label">Community Partners</div></div>
+      <div class="impact-stat"><div class="num">50+</div><div class="label">Student Volunteers</div></div>
+    </div>
+    <div class="impact-quote reveal">
+      <p>"Access to health education shouldn't depend on your zip code. We're here to change that — starting in our own backyard."</p>
+      <cite>— Rami Hemadeh & Daniel Oh, Co-Founders</cite>
+    </div>
+  </div>
+</section>
+<hr class="section-divider">
+<section class="team" id="team">
+  <div class="team-inner">
+    <div class="team-header reveal">
+      <div class="section-label">Our Team</div>
+      <h2 class="section-title">Meet the Leadership</h2>
+      <p class="section-desc">Driven by a shared passion for health equity and community service.</p>
+    </div>
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <div class="team-avatar">RH</div>
+        <h3>Rami Hemadeh</h3>
+        <div class="team-role">Founder & Co-President</div>
+        <p>Leading Health Hope's vision to bridge health disparities across Los Angeles through student-driven outreach and preventive care.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">DO</div>
+        <h3>Daniel Oh</h3>
+        <div class="team-role">Founder & Co-President</div>
+        <p>Spearheading community partnerships and mobile screening initiatives to deliver free health resources to underserved populations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="join" id="join">
+  <div class="join-inner">
+    <div class="reveal">
+      <div class="section-label">Get Involved</div>
+      <h2 class="section-title">Join Health Hope</h2>
+      <p class="section-desc" style="margin-bottom:1.5rem">Whether you're pre-med, public health, or simply passionate about making a difference — there's a place for you.</p>
+      <div class="join-perks">
+        <div class="perk"><div class="perk-icon">🩺</div><span>Hands-on clinical & community health experience</span></div>
+        <div class="perk"><div class="perk-icon">📜</div><span>Letters of recommendation from faculty advisors</span></div>
+        <div class="perk"><div class="perk-icon">🤝</div><span>Networking with healthcare professionals & peers</span></div>
+        <div class="perk"><div class="perk-icon">📈</div><span>Leadership opportunities and resume-building</span></div>
+        <div class="perk"><div class="perk-icon">❤️</div><span>Make a real, tangible impact on LA communities</span></div>
+      </div>
+      <div class="join-social">
+        <h4 style="font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:.5rem">Follow Us</h4>
+        <a href="https://www.instagram.com/healthhopeucla/" target="_blank" class="ig-link">
+          <svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          @healthhopeucla
+        </a>
+      </div>
+    </div>
+    <div class="join-form-wrapper reveal">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--text);margin-bottom:1.3rem">Interest Form</h3>
+      <form id="joinForm">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane" required></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Bruin" required></div>
+        </div>
+        <div class="form-group"><label>UCLA Email</label><input type="email" placeholder="jbruin@ucla.edu" required></div>
+        <div class="form-row">
+          <div class="form-group"><label>Year</label><select required><option value="">Select...</option><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option><option>5th Year+</option><option>Graduate</option></select></div>
+          <div class="form-group"><label>Major</label><input type="text" placeholder="Your major" required></div>
+        </div>
+        <div class="form-group"><label>Why do you want to join Health Hope?</label><textarea placeholder="Tell us about your interest in health equity and community service..."></textarea></div>
+        <button type="submit" class="btn-submit">Submit Interest →</button>
+        <p style="font-size:.72rem;color:var(--text3);margin-top:.7rem;text-align:center">We'll reach out with next steps and upcoming meeting info.</p>
+      </form>
+    </div>
+  </div>
+</section>
+<section class="donate-banner">
+  <div class="donate-inner">
+    <div class="donate-heart">♥</div>
+    <h2>Support Our Mobile Screenings</h2>
+    <p>Your donation directly funds free health screenings, supplies, and educational materials for underserved communities across Los Angeles.</p>
+    <a href="https://www.gofundme.com/f/support-health-hopes-mobile-screenings-at-ucla?attribution_id=sl:dddb9904-40f3-4ede-be4d-869117d9e656&lang=en_US&ts=1770542287&utm_campaign=man_sharesheet_dash&utm_content=amp17_tc&utm_medium=customer&utm_source=copy_link" target="_blank" class="btn-donate">♥ Donate Now</a>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo"><div class="nav-logo-icon">H</div><span class="nav-logo-text">Health Hope</span></a>
+      <p>A student-led UCLA organization dedicated to reducing health disparities through education, outreach, and free preventive screenings.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/healthhopeucla/" target="_blank" aria-label="Instagram"><svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="mailto:healthhopeucla@gmail.com" aria-label="Email">✉</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Navigate</h4><a href="#mission">Our Mission</a><a href="#programs">Programs</a><a href="#impact">Impact</a><a href="#team">Team</a></div>
+    <div class="footer-col"><h4>Get Involved</h4><a href="#join">Join Us</a><a href="https://www.gofundme.com/f/support-health-hopes-mobile-screenings-at-ucla?attribution_id=sl:dddb9904-40f3-4ede-be4d-869117d9e656&lang=en_US&ts=1770542287&utm_campaign=man_sharesheet_dash&utm_content=amp17_tc&utm_medium=customer&utm_source=copy_link" target="_blank">Donate</a><a href="https://www.instagram.com/healthhopeucla/" target="_blank">Instagram</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="mailto:healthhopeucla@gmail.com">healthhopeucla@gmail.com</a><a>University of California,<br>Los Angeles</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Health Hope at UCLA. All rights reserved.</p><p>Made with ♥ by Bruins, for LA.</p></div>
+</footer>
+<script>
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
+document.getElementById('mobileToggle').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+const observer=new IntersectionObserver(entries=>{entries.forEach((entry,i)=>{if(entry.isIntersecting){setTimeout(()=>entry.target.classList.add('visible'),i*80);observer.unobserve(entry.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.getElementById('joinForm').addEventListener('submit',function(e){e.preventDefault();const btn=this.querySelector('.btn-submit');btn.textContent='✓ Submitted!';btn.style.background='#1d4ed8';setTimeout(()=>{btn.textContent='Submit Interest →';btn.style.background='';this.reset()},3000)});
+</script>
+</body>
+</html>
