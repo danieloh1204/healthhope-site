@@ -132,7 +132,7 @@ section { padding: 6rem 2rem; }
 .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; max-width: 640px; margin: 0 auto; }
 .team-card { background: var(--white); border-radius: 16px; padding: 2rem; text-align: center; border: 1px solid var(--border); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
 .team-card:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,0,0,0.06); }
-.team-avatar { width: 72px; height: 72px; background: linear-gradient(135deg, var(--teal), var(--cyan)); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #fff; font-family: 'Playfair Display', serif; font-weight: 700; margin: 0 auto 1.1rem; }
+.team-avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.1rem; display: block; border: 3px solid var(--teal-soft); }
 .team-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--text); margin-bottom: 0.2rem; }
 .team-role { font-size: 0.75rem; color: var(--teal); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.6rem; }
 .team-card p { font-size: 0.84rem; color: var(--text2); line-height: 1.55; font-weight: 300; }
@@ -236,15 +236,15 @@ section { padding: 6rem 2rem; }
   <div class="hero-content">
     <div class="hero-badge">UCLA Student Organization</div>
     <h1>Health <em>Hope</em><br>at UCLA</h1>
-    <p class="hero-sub">A student-led organization providing free health workshops and outreach to underserved communities across Los Angeles.</p>
+    <p class="hero-sub">A student-led organization providing free health workshops, mentorship, and outreach to underserved communities across Los Angeles.</p>
     <div class="hero-buttons">
       <a href="#join" class="btn btn-primary">Get Involved &#8594;</a>
       <a href="#programs" class="btn btn-outline">Our Programs</a>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">500+</div><div class="hero-stat-label">Lives Reached</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-label">Workshops Held</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">50+</div><div class="hero-stat-label">Active Members</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-label">Active Programs</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">228</div><div class="hero-stat-label">Instagram Followers</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">2024</div><div class="hero-stat-label">Year Founded</div></div>
     </div>
   </div>
 </section>
@@ -260,18 +260,18 @@ section { padding: 6rem 2rem; }
         <div class="mission-icon-grid">
           <div class="mission-icon-item"><div class="icon">&#x1FA7A;</div><span>Screenings</span></div>
           <div class="mission-icon-item"><div class="icon">&#x1F4DA;</div><span>Education</span></div>
-          <div class="mission-icon-item"><div class="icon">&#x1F91D;</div><span>Outreach</span></div>
-          <div class="mission-icon-item"><div class="icon">&#x2764;&#xFE0F;</div><span>Advocacy</span></div>
+          <div class="mission-icon-item"><div class="icon">&#x1F91D;</div><span>Mentorship</span></div>
+          <div class="mission-icon-item"><div class="icon">&#x2764;&#xFE0F;</div><span>Outreach</span></div>
         </div>
       </div>
     </div>
     <div class="reveal">
       <div class="section-label">Our Mission</div>
       <h2 class="section-title">Reducing health disparities through action</h2>
-      <p class="section-desc" style="margin-bottom:1.8rem">We provide free public health education, community outreach, and preventive health screenings to underserved populations throughout Los Angeles County.</p>
+      <p class="section-desc" style="margin-bottom:1.8rem">We provide free public health education, hands-on clinical skills workshops, healthcare career mentorship, and preventive health screenings to underserved populations throughout Los Angeles County.</p>
       <div class="mission-pillars">
         <div class="pillar"><div class="pillar-num">01</div><div><h4>Health Education</h4><p>Interactive workshops on chronic disease prevention, nutrition, mental health, and health literacy for all ages.</p></div></div>
-        <div class="pillar"><div class="pillar-num">02</div><div><h4>Community Outreach</h4><p>Partnering with local shelters, schools, and community centers to bring resources directly to those who need them most.</p></div></div>
+        <div class="pillar"><div class="pillar-num">02</div><div><h4>Mentorship &amp; Skills Training</h4><p>Mentoring high school and college students about healthcare careers, plus hands-on suturing and vital signs workshops.</p></div></div>
         <div class="pillar"><div class="pillar-num">03</div><div><h4>Preventive Screenings</h4><p>Free blood pressure, glucose, BMI, and vision screenings to identify health risks early and connect people with care.</p></div></div>
       </div>
     </div>
@@ -286,15 +286,15 @@ section { padding: 6rem 2rem; }
     <div class="programs-header reveal">
       <div class="section-label">What We Do</div>
       <h2 class="section-title">Our Programs &amp; Initiatives</h2>
-      <p class="section-desc">From mobile health screenings to campus workshops, we are building a healthier Los Angeles.</p>
+      <p class="section-desc">From hands-on clinical workshops to community screenings, we are building a healthier Los Angeles.</p>
     </div>
     <div class="programs-grid">
       <div class="program-card reveal"><div class="program-emoji">&#x1F3E5;</div><h3>Mobile Health Screenings</h3><p>Free preventive health screenings in underserved neighborhoods &#8212; blood pressure, glucose, BMI, and vision assessments at no cost.</p></div>
-      <div class="program-card reveal"><div class="program-emoji">&#x1F393;</div><h3>Health Literacy Workshops</h3><p>Interactive sessions on chronic disease prevention, nutrition, mental health awareness, and navigating the healthcare system.</p></div>
-      <div class="program-card reveal"><div class="program-emoji">&#x1F30D;</div><h3>Community Partnerships</h3><p>Collaborating with LA shelters, schools, faith-based organizations, and community centers to embed health resources locally.</p></div>
+      <div class="program-card reveal"><div class="program-emoji">&#x1FA7A;</div><h3>Suturing &amp; Vital Signs Workshops</h3><p>Hands-on clinical skills training where students learn suturing techniques, how to take vital signs, and fundamental patient care skills.</p></div>
+      <div class="program-card reveal"><div class="program-emoji">&#x1F393;</div><h3>Healthcare Career Mentorship</h3><p>Mentoring high school and college students exploring careers in medicine, nursing, public health, and allied health professions.</p></div>
       <div class="program-card reveal"><div class="program-emoji">&#x1F9E0;</div><h3>Mental Health Initiatives</h3><p>Destigmatizing mental health through open forums, stress management workshops, and connecting individuals with support services.</p></div>
-      <div class="program-card reveal"><div class="program-emoji">&#x1F4CB;</div><h3>Research &amp; Advocacy</h3><p>Community health needs assessments and advocating for equitable healthcare policies addressing root causes of health disparities.</p></div>
-      <div class="program-card reveal"><div class="program-emoji">&#x1F932;</div><h3>Volunteer Training</h3><p>Equipping UCLA students with clinical communication, cultural competency, and public health knowledge for meaningful impact.</p></div>
+      <div class="program-card reveal"><div class="program-emoji">&#x1F30D;</div><h3>Community Partnerships</h3><p>Collaborating with LA shelters, schools, faith-based organizations, and community centers to embed health resources locally.</p></div>
+      <div class="program-card reveal"><div class="program-emoji">&#x1F4CB;</div><h3>Health Literacy Workshops</h3><p>Educational sessions on chronic disease prevention, nutrition fundamentals, and navigating the healthcare system for underserved communities.</p></div>
     </div>
   </div>
 </section>
@@ -304,14 +304,14 @@ section { padding: 6rem 2rem; }
   <div class="impact-inner">
     <div class="impact-header reveal">
       <div class="section-label">Our Impact</div>
-      <h2 class="section-title">Making a Measurable Difference</h2>
-      <p class="section-desc">Every screening, every workshop, and every conversation moves us closer to health equity.</p>
+      <h2 class="section-title">Growing Every Quarter</h2>
+      <p class="section-desc">Founded in 2024, we are a young organization with ambitious goals and momentum building fast.</p>
     </div>
     <div class="impact-stats reveal">
-      <div class="impact-stat"><div class="num">500+</div><div class="label">Community Members Served</div></div>
-      <div class="impact-stat"><div class="num">20+</div><div class="label">Workshops &amp; Events</div></div>
-      <div class="impact-stat"><div class="num">10+</div><div class="label">Community Partners</div></div>
-      <div class="impact-stat"><div class="num">50+</div><div class="label">Student Volunteers</div></div>
+      <div class="impact-stat"><div class="num">30+</div><div class="label">Community Members Reached</div></div>
+      <div class="impact-stat"><div class="num">3</div><div class="label">Programs Launched</div></div>
+      <div class="impact-stat"><div class="num">3</div><div class="label">Community Partners</div></div>
+      <div class="impact-stat"><div class="num">15+</div><div class="label">Active Members</div></div>
     </div>
     <div class="impact-quote reveal">
       <p>"Access to health education should not depend on your zip code. We are here to change that &#8212; starting in our own backyard."</p>
@@ -327,21 +327,21 @@ section { padding: 6rem 2rem; }
   <div class="team-inner">
     <div class="team-header reveal">
       <div class="section-label">Our Team</div>
-      <h2 class="section-title">Meet the Leadership</h2>
+      <h2 class="section-title">Meet the Founders</h2>
       <p class="section-desc">Driven by a shared passion for health equity and community service.</p>
     </div>
     <div class="team-grid reveal">
       <div class="team-card">
-        <div class="team-avatar">RH</div>
+        <img src="rami.jpg" alt="Rami Hemadeh" class="team-avatar">
         <h3>Rami Hemadeh</h3>
         <div class="team-role">Founder &amp; Co-President</div>
-        <p>Leading Health Hope's vision to bridge health disparities across Los Angeles through student-driven outreach and preventive care.</p>
+        <p>Leading Health Hope's vision to bridge health disparities across Los Angeles through student-driven outreach, mentorship, and preventive care.</p>
       </div>
       <div class="team-card">
-        <div class="team-avatar">DO</div>
+        <img src="daniel.jpg" alt="Daniel Oh" class="team-avatar">
         <h3>Daniel Oh</h3>
         <div class="team-role">Founder &amp; Co-President</div>
-        <p>Spearheading community partnerships and mobile screening initiatives to deliver free health resources to underserved populations.</p>
+        <p>Spearheading community partnerships, clinical skills workshops, and mobile screening initiatives for underserved populations.</p>
       </div>
     </div>
   </div>
@@ -355,9 +355,9 @@ section { padding: 6rem 2rem; }
       <h2 class="section-title">Join Health Hope</h2>
       <p class="section-desc" style="margin-bottom:1.5rem">Whether you are pre-med, public health, or simply passionate about making a difference &#8212; there is a place for you.</p>
       <div class="join-perks">
-        <div class="perk"><div class="perk-icon">&#x1FA7A;</div><span>Hands-on clinical &amp; community health experience</span></div>
-        <div class="perk"><div class="perk-icon">&#x1F4DC;</div><span>Letters of recommendation from faculty advisors</span></div>
-        <div class="perk"><div class="perk-icon">&#x1F91D;</div><span>Networking with healthcare professionals &amp; peers</span></div>
+        <div class="perk"><div class="perk-icon">&#x1FA7A;</div><span>Hands-on suturing &amp; vital signs training</span></div>
+        <div class="perk"><div class="perk-icon">&#x1F4DC;</div><span>Clinical &amp; community health experience</span></div>
+        <div class="perk"><div class="perk-icon">&#x1F91D;</div><span>Mentor high school &amp; college students</span></div>
         <div class="perk"><div class="perk-icon">&#x1F4C8;</div><span>Leadership opportunities and resume-building</span></div>
         <div class="perk"><div class="perk-icon">&#x2764;&#xFE0F;</div><span>Make a real, tangible impact on LA communities</span></div>
       </div>
@@ -394,7 +394,7 @@ section { padding: 6rem 2rem; }
   <div class="donate-inner">
     <div class="donate-heart">&#9829;</div>
     <h2>Support Our Mobile Screenings</h2>
-    <p>Your donation directly funds free health screenings, supplies, and educational materials for underserved communities across Los Angeles.</p>
+    <p>Your donation directly funds free health screenings, suturing kits, workshop supplies, and educational materials for underserved communities across Los Angeles.</p>
     <a href="https://www.gofundme.com/f/support-health-hopes-mobile-screenings-at-ucla?attribution_id=sl:dddb9904-40f3-4ede-be4d-869117d9e656&lang=en_US&ts=1770542287&utm_campaign=man_sharesheet_dash&utm_content=amp17_tc&utm_medium=customer&utm_source=copy_link" target="_blank" class="btn-donate">&#9829; Donate Now</a>
   </div>
 </section>
@@ -407,7 +407,7 @@ section { padding: 6rem 2rem; }
         <img src="logo.png" alt="Health Hope Logo" class="nav-logo-icon">
         <span class="nav-logo-text">Health Hope</span>
       </a>
-      <p>A student-led UCLA organization dedicated to reducing health disparities through education, outreach, and free preventive screenings.</p>
+      <p>A student-led UCLA organization dedicated to reducing health disparities through education, mentorship, and free preventive screenings.</p>
       <div class="footer-social">
         <a href="https://www.instagram.com/healthhopeucla/" target="_blank" aria-label="Instagram">
           <svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
