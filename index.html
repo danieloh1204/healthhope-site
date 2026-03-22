@@ -3,39 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Hope at UCLA — Free Health Education &amp; Outreach</title>
+<title>Health Hope at UCLA</title>
 <meta name="description" content="Health Hope at UCLA is a student-led organization providing free health workshops, community outreach, and preventive health screenings to underserved communities in Los Angeles.">
-<meta property="og:title" content="Health Hope at UCLA">
-<meta property="og:description" content="Reducing health disparities through free public health education and community outreach in Los Angeles.">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
 :root {
-  --white: #fff;
-  --off-white: #f8fbfc;
-  --warm-gray: #eef6f8;
-  --border: #dde9ed;
-  --teal: #0891b2;
-  --teal-hover: #0e7490;
-  --teal-light: #06b6d4;
-  --teal-soft: #ccf4fc;
-  --teal-muted: #ecfeff;
-  --cyan: #22d3ee;
-  --text: #0f172a;
-  --text2: #475569;
-  --text3: #94a3b8;
+  --white: #fff; --off-white: #f8fbfc; --warm-gray: #eef6f8; --border: #dde9ed;
+  --teal: #0891b2; --teal-hover: #0e7490; --teal-light: #06b6d4; --teal-soft: #ccf4fc;
+  --teal-muted: #ecfeff; --cyan: #22d3ee;
+  --text: #0f172a; --text2: #475569; --text3: #94a3b8;
 }
-
 html { scroll-behavior: smooth; }
 body { font-family: 'Be Vietnam Pro', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
-/* ===== NAVBAR ===== */
-.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.1rem 3rem; display: flex; align-items: center; justify-content: space-between; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-.navbar.scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0.8rem 3rem; }
+/* NAVBAR - always visible, no JS needed */
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.8rem 3rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
 .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--text); }
 .nav-logo-icon { width: 34px; height: 34px; border-radius: 9px; object-fit: contain; transition: transform 0.3s; }
 .nav-logo:hover .nav-logo-icon { transform: rotate(-5deg) scale(1.05); }
@@ -46,24 +32,24 @@ body { font-family: 'Be Vietnam Pro', sans-serif; color: var(--text); background
 .nav-cta { background: var(--teal) !important; color: #fff !important; font-weight: 600 !important; padding: 0.45rem 1.2rem !important; }
 .nav-cta:hover { background: var(--teal-hover) !important; }
 .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; }
-.mobile-toggle span { width: 22px; height: 1.5px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
+.mobile-toggle span { width: 22px; height: 1.5px; background: var(--text); border-radius: 2px; }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; background: var(--white); overflow: hidden; }
 .hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, #c8dfe5 0.7px, transparent 0.7px); background-size: 28px 28px; opacity: 0.4; }
 .hero-glow { position: absolute; width: 650px; height: 650px; background: radial-gradient(circle, rgba(8,145,178,0.06) 0%, transparent 70%); border-radius: 50%; top: 5%; right: -12%; animation: drift 25s ease-in-out infinite; }
 .hero-glow-2 { position: absolute; width: 450px; height: 450px; background: radial-gradient(circle, rgba(204,244,252,0.25) 0%, transparent 70%); border-radius: 50%; bottom: 5%; left: -8%; animation: drift 20s ease-in-out infinite reverse; }
-@keyframes drift { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(20px, -30px); } }
+@keyframes drift { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(20px,-30px); } }
 .hero-content { position: relative; z-index: 2; text-align: center; max-width: 780px; padding: 2rem; }
 .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--teal-muted); border: 1px solid rgba(8,145,178,0.12); padding: 0.4rem 1.1rem; border-radius: 100px; font-size: 0.75rem; color: var(--teal); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 2rem; animation: fadeUp 0.7s ease-out both; }
 .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: pulse-dot 2s ease-in-out infinite; }
 @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.5); } }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 6.5vw, 5.2rem); color: var(--text); line-height: 1.05; letter-spacing: -0.035em; margin-bottom: 1.5rem; animation: fadeUp 0.7s 0.1s ease-out both; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem,6.5vw,5.2rem); color: var(--text); line-height: 1.05; letter-spacing: -0.035em; margin-bottom: 1.5rem; animation: fadeUp 0.7s 0.1s ease-out both; }
 .hero h1 em { font-style: italic; color: var(--teal); }
-.hero-sub { font-size: clamp(1rem, 2vw, 1.15rem); color: var(--text2); line-height: 1.7; max-width: 540px; margin: 0 auto 2.5rem; font-weight: 300; animation: fadeUp 0.7s 0.2s ease-out both; }
+.hero-sub { font-size: clamp(1rem,2vw,1.15rem); color: var(--text2); line-height: 1.7; max-width: 540px; margin: 0 auto 2.5rem; font-weight: 300; animation: fadeUp 0.7s 0.2s ease-out both; }
 .hero-buttons { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.7s 0.3s ease-out both; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.8rem; border-radius: 10px; font-size: 0.9rem; font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); font-family: 'Be Vietnam Pro', sans-serif; }
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.8rem; border-radius: 10px; font-size: 0.9rem; font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all 0.3s cubic-bezier(0.16,1,0.3,1); font-family: 'Be Vietnam Pro', sans-serif; }
 .btn-primary { background: var(--teal); color: #fff; box-shadow: 0 2px 12px rgba(8,145,178,0.2); }
 .btn-primary:hover { background: var(--teal-hover); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(8,145,178,0.25); }
 .btn-outline { background: var(--white); color: var(--text); border: 1.5px solid var(--border); }
@@ -73,15 +59,15 @@ body { font-family: 'Be Vietnam Pro', sans-serif; color: var(--text); background
 .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--text); letter-spacing: -0.02em; font-weight: 700; }
 .hero-stat-label { font-size: 0.72rem; color: var(--text3); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.15rem; }
 
-/* ===== SECTIONS ===== */
+/* SECTIONS */
 section { padding: 6rem 2rem; }
 .section-divider { max-width: 1100px; margin: 0 auto; border: none; border-top: 1px solid var(--border); }
 .section-label { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--teal); margin-bottom: 0.8rem; }
 .section-label::before { content: ''; width: 20px; height: 1.5px; background: var(--teal); }
-.section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 0.8rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem,4vw,2.8rem); letter-spacing: -0.03em; line-height: 1.15; color: var(--text); margin-bottom: 0.8rem; }
 .section-desc { font-size: 1rem; color: var(--text2); line-height: 1.7; max-width: 550px; font-weight: 300; }
 
-/* ===== MISSION ===== */
+/* MISSION */
 .mission { background: var(--white); }
 .mission-grid { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
 .mission-card { background: var(--off-white); border-radius: 20px; padding: 2.5rem; border: 1px solid var(--border); position: relative; }
@@ -98,24 +84,24 @@ section { padding: 6rem 2rem; }
 .pillar h4 { font-size: 0.92rem; font-weight: 600; color: var(--text); margin-bottom: 0.15rem; }
 .pillar p { font-size: 0.84rem; color: var(--text2); line-height: 1.55; font-weight: 300; }
 
-/* ===== PROGRAMS ===== */
+/* PROGRAMS */
 .programs { background: var(--off-white); }
 .programs-inner { max-width: 1060px; margin: 0 auto; }
 .programs-header { text-align: center; margin-bottom: 3.5rem; }
 .programs-header .section-desc { margin: 0 auto; }
-.programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-.program-card { background: var(--white); border-radius: 16px; padding: 1.8rem; border: 1px solid var(--border); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+.programs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
+.program-card { background: var(--white); border-radius: 16px; padding: 1.8rem; border: 1px solid var(--border); transition: all 0.35s cubic-bezier(0.16,1,0.3,1); }
 .program-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); border-color: rgba(8,145,178,0.2); }
 .program-emoji { width: 46px; height: 46px; background: var(--teal-muted); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.2rem; }
 .program-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--text); margin-bottom: 0.5rem; }
 .program-card p { font-size: 0.84rem; color: var(--text2); line-height: 1.6; font-weight: 300; }
 
-/* ===== IMPACT ===== */
+/* IMPACT */
 .impact { background: var(--white); }
 .impact-inner { max-width: 1060px; margin: 0 auto; }
 .impact-header { text-align: center; margin-bottom: 3.5rem; }
 .impact-header .section-desc { margin: 0 auto; }
-.impact-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-bottom: 3rem; }
+.impact-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.2rem; margin-bottom: 3rem; }
 .impact-stat { background: var(--off-white); border: 1px solid var(--border); border-radius: 16px; padding: 2rem 1.2rem; text-align: center; transition: all 0.3s; }
 .impact-stat:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.04); }
 .impact-stat .num { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--teal); font-weight: 700; line-height: 1; }
@@ -124,25 +110,25 @@ section { padding: 6rem 2rem; }
 .impact-quote p { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--text); line-height: 1.65; font-style: italic; }
 .impact-quote cite { display: block; margin-top: 1rem; font-style: normal; font-size: 0.82rem; color: var(--text3); font-weight: 500; }
 
-/* ===== TEAM ===== */
+/* TEAM */
 .team { background: var(--off-white); }
 .team-inner { max-width: 1060px; margin: 0 auto; }
 .team-header { text-align: center; margin-bottom: 3.5rem; }
 .team-header .section-desc { margin: 0 auto; }
-.team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; max-width: 640px; margin: 0 auto; }
-.team-card { background: var(--white); border-radius: 16px; padding: 2rem; text-align: center; border: 1px solid var(--border); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+.team-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.2rem; max-width: 640px; margin: 0 auto; }
+.team-card { background: var(--white); border-radius: 16px; padding: 2rem; text-align: center; border: 1px solid var(--border); transition: all 0.35s cubic-bezier(0.16,1,0.3,1); }
 .team-card:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,0,0,0.06); }
 .team-avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.1rem; display: block; border: 3px solid var(--teal-soft); }
 .team-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--text); margin-bottom: 0.2rem; }
 .team-role { font-size: 0.75rem; color: var(--teal); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.6rem; }
 .team-card p { font-size: 0.84rem; color: var(--text2); line-height: 1.55; font-weight: 300; }
 
-/* ===== JOIN ===== */
+/* JOIN */
 .join { background: var(--white); }
 .join-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .join-form-wrapper { background: var(--off-white); border-radius: 20px; padding: 2.2rem; border: 1px solid var(--border); }
 .form-group { margin-bottom: 1rem; }
-.form-group label { display: block; font-size: 0.76rem; font-weight: 600; color: var(--text); margin-bottom: 0.35rem; letter-spacing: 0.02em; }
+.form-group label { display: block; font-size: 0.76rem; font-weight: 600; color: var(--text); margin-bottom: 0.35rem; }
 .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--border); border-radius: 9px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.88rem; background: var(--white); transition: all 0.2s; outline: none; color: var(--text); }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(8,145,178,0.08); }
 .form-group textarea { min-height: 75px; resize: vertical; }
@@ -158,16 +144,16 @@ section { padding: 6rem 2rem; }
 .ig-link:hover { opacity: 0.7; }
 .ig-icon { width: 16px; height: 16px; fill: currentColor; }
 
-/* ===== DONATE ===== */
+/* DONATE */
 .donate-banner { background: var(--off-white); padding: 5rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.donate-inner { max-width: 600px; margin: 0 auto; position: relative; z-index: 2; }
+.donate-inner { max-width: 600px; margin: 0 auto; }
 .donate-heart { width: 56px; height: 56px; background: var(--teal-soft); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.5rem; color: var(--teal); }
-.donate-banner h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.3rem); color: var(--text); margin-bottom: 0.8rem; letter-spacing: -0.02em; }
+.donate-banner h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,3.5vw,2.3rem); color: var(--text); margin-bottom: 0.8rem; letter-spacing: -0.02em; }
 .donate-banner p { font-size: 0.95rem; color: var(--text2); line-height: 1.65; margin-bottom: 2rem; font-weight: 300; }
 .btn-donate { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--teal); color: #fff; padding: 0.85rem 2.2rem; border-radius: 10px; font-size: 0.95rem; font-weight: 700; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 16px rgba(8,145,178,0.2); font-family: 'Be Vietnam Pro', sans-serif; }
 .btn-donate:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(8,145,178,0.25); background: var(--teal-hover); }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 .footer { background: var(--text); padding: 3.5rem 2rem 2rem; }
 .footer-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
 .footer-brand .nav-logo { margin-bottom: 0.8rem; }
@@ -184,51 +170,20 @@ section { padding: 6rem 2rem; }
 .footer-bottom { max-width: 1060px; margin: 2.5rem auto 0; padding-top: 1.3rem; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; }
 .footer-bottom p { font-size: 0.74rem; color: rgba(255,255,255,0.25); font-weight: 300; }
 
-/* ===== ANIMATIONS ===== */
-@keyframes revealUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.reveal {
-  animation: revealUp 0.7s ease-out both;
-  animation-timeline: view();
-  animation-range: entry 0% entry 30%;
-}
-/* Fallback for browsers that don't support animation-timeline */
-@supports not (animation-timeline: view()) {
-  .reveal { opacity: 1; transform: translateY(0); }
-}
+/* SCROLL ANIMATIONS - pure CSS, no JS */
+@keyframes revealUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { animation: revealUp 0.7s ease-out both; animation-timeline: view(); animation-range: entry 0% entry 30%; }
+@supports not (animation-timeline: view()) { .reveal { opacity: 1; transform: none; } }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .mission-grid, .join-inner, .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-  .programs-grid { grid-template-columns: 1fr 1fr; }
-  .impact-stats { grid-template-columns: repeat(2, 1fr); }
-  .navbar { padding: 1rem 1.5rem; }
-  .navbar.scrolled { padding: 0.7rem 1.5rem; }
-}
-@media (max-width: 700px) {
-  .nav-links { display: none; }
-  .mobile-toggle { display: flex; }
-  .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 0.8rem; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-radius: 0 0 14px 14px; border: 1px solid var(--border); border-top: none; }
-  .nav-links.open a { color: var(--text2); padding: 0.7rem 1rem; }
-  section { padding: 4rem 1.5rem; }
-  .programs-grid { grid-template-columns: 1fr; }
-  .team-grid { grid-template-columns: 1fr; max-width: 320px; }
-  .form-row { grid-template-columns: 1fr; }
-  .hero-stats { flex-direction: column; gap: 1rem; }
-  .footer-inner { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-}
+/* RESPONSIVE */
+@media (max-width:900px) { .mission-grid,.join-inner,.footer-inner { grid-template-columns: 1fr; gap: 2.5rem; } .programs-grid { grid-template-columns: 1fr 1fr; } .impact-stats { grid-template-columns: repeat(2,1fr); } .navbar { padding: 0.7rem 1.5rem; } }
+@media (max-width:700px) { .nav-links { display: none; } .mobile-toggle { display: flex; } .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 0.8rem; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-radius: 0 0 14px 14px; border: 1px solid var(--border); border-top: none; } .nav-links.open a { color: var(--text2); padding: 0.7rem 1rem; } section { padding: 4rem 1.5rem; } .programs-grid { grid-template-columns: 1fr; } .team-grid { grid-template-columns: 1fr; max-width: 320px; } .form-row { grid-template-columns: 1fr; } .hero-stats { flex-direction: column; gap: 1rem; } .footer-inner { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
-  <a href="#" class="nav-logo">
-    <img src="logo.png" alt="Health Hope Logo" class="nav-logo-icon">
-    <span class="nav-logo-text">Health Hope</span>
-  </a>
+  <a href="#" class="nav-logo"><img src="logo.png" alt="Health Hope Logo" class="nav-logo-icon"><span class="nav-logo-text">Health Hope</span></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#mission">Mission</a></li>
     <li><a href="#programs">Programs</a></li>
@@ -240,7 +195,6 @@ section { padding: 6rem 2rem; }
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
@@ -260,7 +214,6 @@ section { padding: 6rem 2rem; }
   </div>
 </section>
 
-<!-- MISSION -->
 <section class="mission" id="mission">
   <div class="mission-grid">
     <div class="reveal">
@@ -282,7 +235,7 @@ section { padding: 6rem 2rem; }
       <p class="section-desc" style="margin-bottom:1.8rem">We provide free public health education, hands-on clinical skills workshops, healthcare career mentorship, and preventive health screenings to underserved populations throughout Los Angeles County.</p>
       <div class="mission-pillars">
         <div class="pillar"><div class="pillar-num">01</div><div><h4>Health Education</h4><p>Interactive workshops on chronic disease prevention, nutrition, mental health, and health literacy for all ages.</p></div></div>
-        <div class="pillar"><div class="pillar-num">02</div><div><h4>Mentorship &amp; Skills Training</h4><p>Mentoring high school and college students about healthcare careers, plus hands-on suturing and vital signs workshops.</p></div></div>
+        <div class="pillar"><div class="pillar-num">02</div><div><h4>Mentorship and Skills Training</h4><p>Mentoring high school and college students about healthcare careers, plus hands-on suturing and vital signs workshops.</p></div></div>
         <div class="pillar"><div class="pillar-num">03</div><div><h4>Preventive Screenings</h4><p>Free blood pressure, glucose, BMI, and vision screenings to identify health risks early and connect people with care.</p></div></div>
       </div>
     </div>
@@ -291,17 +244,16 @@ section { padding: 6rem 2rem; }
 
 <hr class="section-divider">
 
-<!-- PROGRAMS -->
 <section class="programs" id="programs">
   <div class="programs-inner">
     <div class="programs-header reveal">
       <div class="section-label">What We Do</div>
-      <h2 class="section-title">Our Programs &amp; Initiatives</h2>
+      <h2 class="section-title">Our Programs and Initiatives</h2>
       <p class="section-desc">From hands-on clinical workshops to community screenings, we are building a healthier Los Angeles.</p>
     </div>
     <div class="programs-grid">
       <div class="program-card reveal"><div class="program-emoji">&#x1F3E5;</div><h3>Mobile Health Screenings</h3><p>Free preventive health screenings in underserved neighborhoods &#8212; blood pressure, glucose, BMI, and vision assessments at no cost.</p></div>
-      <div class="program-card reveal"><div class="program-emoji">&#x1FA7A;</div><h3>Suturing &amp; Vital Signs Workshops</h3><p>Hands-on clinical skills training where students learn suturing techniques, how to take vital signs, and fundamental patient care skills.</p></div>
+      <div class="program-card reveal"><div class="program-emoji">&#x1FA7A;</div><h3>Suturing and Vital Signs Workshops</h3><p>Hands-on clinical skills training where students learn suturing techniques, how to take vital signs, and fundamental patient care skills.</p></div>
       <div class="program-card reveal"><div class="program-emoji">&#x1F393;</div><h3>Healthcare Career Mentorship</h3><p>Mentoring high school and college students exploring careers in medicine, nursing, public health, and allied health professions.</p></div>
       <div class="program-card reveal"><div class="program-emoji">&#x1F9E0;</div><h3>Mental Health Initiatives</h3><p>Destigmatizing mental health through open forums, stress management workshops, and connecting individuals with support services.</p></div>
       <div class="program-card reveal"><div class="program-emoji">&#x1F30D;</div><h3>Community Partnerships</h3><p>Collaborating with LA shelters, schools, faith-based organizations, and community centers to embed health resources locally.</p></div>
@@ -310,7 +262,6 @@ section { padding: 6rem 2rem; }
   </div>
 </section>
 
-<!-- IMPACT -->
 <section class="impact" id="impact">
   <div class="impact-inner">
     <div class="impact-header reveal">
@@ -326,14 +277,13 @@ section { padding: 6rem 2rem; }
     </div>
     <div class="impact-quote reveal">
       <p>"Access to health education should not depend on your zip code. We are here to change that &#8212; starting in our own backyard."</p>
-      <cite>&#8212; Rami Hemadeh &amp; Daniel Oh, Co-Founders</cite>
+      <cite>&#8212; Rami Hemadeh and Daniel Oh, Co-Founders</cite>
     </div>
   </div>
 </section>
 
 <hr class="section-divider">
 
-<!-- TEAM -->
 <section class="team" id="team">
   <div class="team-inner">
     <div class="team-header reveal">
@@ -345,20 +295,19 @@ section { padding: 6rem 2rem; }
       <div class="team-card">
         <img src="rami.jpg" alt="Rami Hemadeh" class="team-avatar">
         <h3>Rami Hemadeh</h3>
-        <div class="team-role">Founder &amp; Co-President</div>
+        <div class="team-role">Founder and Co-President</div>
         <p>Leading Health Hope's vision to bridge health disparities across Los Angeles through student-driven outreach, mentorship, and preventive care.</p>
       </div>
       <div class="team-card">
         <img src="daniel.jpg" alt="Daniel Oh" class="team-avatar">
         <h3>Daniel Oh</h3>
-        <div class="team-role">Founder &amp; Co-President</div>
+        <div class="team-role">Founder and Co-President</div>
         <p>Spearheading community partnerships, clinical skills workshops, and mobile screening initiatives for underserved populations.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- JOIN -->
 <section class="join" id="join">
   <div class="join-inner">
     <div class="reveal">
@@ -366,9 +315,9 @@ section { padding: 6rem 2rem; }
       <h2 class="section-title">Join Health Hope</h2>
       <p class="section-desc" style="margin-bottom:1.5rem">Whether you are pre-med, public health, or simply passionate about making a difference &#8212; there is a place for you.</p>
       <div class="join-perks">
-        <div class="perk"><div class="perk-icon">&#x1FA7A;</div><span>Hands-on suturing &amp; vital signs training</span></div>
-        <div class="perk"><div class="perk-icon">&#x1F4DC;</div><span>Clinical &amp; community health experience</span></div>
-        <div class="perk"><div class="perk-icon">&#x1F91D;</div><span>Mentor high school &amp; college students</span></div>
+        <div class="perk"><div class="perk-icon">&#x1FA7A;</div><span>Hands-on suturing and vital signs training</span></div>
+        <div class="perk"><div class="perk-icon">&#x1F4DC;</div><span>Clinical and community health experience</span></div>
+        <div class="perk"><div class="perk-icon">&#x1F91D;</div><span>Mentor high school and college students</span></div>
         <div class="perk"><div class="perk-icon">&#x1F4C8;</div><span>Leadership opportunities and resume-building</span></div>
         <div class="perk"><div class="perk-icon">&#x2764;&#xFE0F;</div><span>Make a real, tangible impact on LA communities</span></div>
       </div>
@@ -400,7 +349,6 @@ section { padding: 6rem 2rem; }
   </div>
 </section>
 
-<!-- DONATE -->
 <section class="donate-banner">
   <div class="donate-inner">
     <div class="donate-heart">&#9829;</div>
@@ -410,25 +358,18 @@ section { padding: 6rem 2rem; }
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="#" class="nav-logo">
-        <img src="logo.png" alt="Health Hope Logo" class="nav-logo-icon">
-        <span class="nav-logo-text">Health Hope</span>
-      </a>
+      <a href="#" class="nav-logo"><img src="logo.png" alt="Health Hope Logo" class="nav-logo-icon"><span class="nav-logo-text">Health Hope</span></a>
       <p>A student-led UCLA organization dedicated to reducing health disparities through education, mentorship, and free preventive screenings.</p>
       <div class="footer-social">
-        <a href="https://www.instagram.com/healthhopeucla/" target="_blank" aria-label="Instagram">
-          <svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-        </a>
-        <a href="/cdn-cgi/l/email-protection#b7dfd2d6dbc3dfdfd8c7d2c2d4dbd6f7d0dad6dedb99d4d8da" aria-label="Email">&#9993;</a>
+        <a href="https://www.instagram.com/healthhopeucla/" target="_blank" aria-label="Instagram"><svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
       </div>
     </div>
     <div class="footer-col"><h4>Navigate</h4><a href="#mission">Our Mission</a><a href="#programs">Programs</a><a href="#impact">Impact</a><a href="#team">Team</a></div>
     <div class="footer-col"><h4>Get Involved</h4><a href="#join">Join Us</a><a href="https://www.gofundme.com/f/support-health-hopes-mobile-screenings-at-ucla?attribution_id=sl:dddb9904-40f3-4ede-be4d-869117d9e656&lang=en_US&ts=1770542287&utm_campaign=man_sharesheet_dash&utm_content=amp17_tc&utm_medium=customer&utm_source=copy_link" target="_blank">Donate</a><a href="https://www.instagram.com/healthhopeucla/" target="_blank">Instagram</a></div>
-    <div class="footer-col"><h4>Contact</h4><a href="/cdn-cgi/l/email-protection#b9d1dcd8d5cdd1d1d6c9dcccdad5d8f9ded4d8d0d597dad6d4"><span class="__cf_email__" data-cfemail="28404d49445c404047584d5d4b4449684f45494144064b4745">[email&#160;protected]</span></a><a>University of California, Los Angeles</a></div>
+    <div class="footer-col"><h4>Contact</h4><a>healthhopeucla at gmail.com</a><a>University of California, Los Angeles</a></div>
   </div>
   <div class="footer-bottom">
     <p>&#169; 2025 Health Hope at UCLA. All rights reserved.</p>
@@ -436,12 +377,7 @@ section { padding: 6rem 2rem; }
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-var navbar = document.getElementById('navbar');
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 50) { navbar.classList.add('scrolled'); }
-  else { navbar.classList.remove('scrolled'); }
-});
+<script>
 document.getElementById('mobileToggle').addEventListener('click', function() {
   document.getElementById('navLinks').classList.toggle('open');
 });
@@ -451,5 +387,7 @@ for (var i = 0; i < allNavLinks.length; i++) {
     document.getElementById('navLinks').classList.remove('open');
   });
 }
-document.getElementById('joinForm').addEventListener('submit', function(e) {
-  e
+</script>
+
+</body>
+</html>
